@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Oregon Hikes";
+
+}
+<style>
+    body {
+        background-image: url('photo1.jpg');
+    }
+</style>
+<body>
+
+    <div class="text-center">
+        <div class="jumbotron">
+            <h1 class="display-4">@ViewData["Title"]</h1>
+
+            <h3>Get out and enjoy your state</h3>
+        </div>
+    </div>
+
+    <div class="container bg-success">
+        <div class="page-header">
+            <blockquote>
+                <h2>"To me a lush carpet of pine needles or spongy grass is more welcome the most luxurious Persian rug." </h2>
+                <footer><H3>Helen Keller</H3></footer>
+            </blockquote>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h3>Site Stats:</h3>
+            <h4>Number of Hikes: @ViewBag.hikeCount</h4>
+            <!-- this doesn't work properly!<h4>Newest Hike: <i>@ViewData["newestHike"]</i></h4> -->
+        </div>
+    </div>
+
+</body>
