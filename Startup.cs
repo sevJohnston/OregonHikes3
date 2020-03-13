@@ -29,10 +29,12 @@ namespace OregonHikes3
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer
             (Configuration["Data:OregonHikes3:ConnectionString"]));
+
+            services.AddTransient<IHikeRepository, HikeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AppDbContext appContext )
         {
             if (env.IsDevelopment())
             {
@@ -48,6 +50,8 @@ namespace OregonHikes3
                     pattern: "{controller=Home}/{action=Index}");
 
             });
+
+            SeedData.Seed(appContext);
         }
     }
 }

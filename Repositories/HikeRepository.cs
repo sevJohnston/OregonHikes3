@@ -27,7 +27,7 @@ namespace OregonHikes3.Repositories
             }
         }
 
-        static void AddHikeSeedData()
+        public static void AddHikeSeedData()
         {
             Hike hike = new Hike()
             {
