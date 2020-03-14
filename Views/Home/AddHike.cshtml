@@ -1,0 +1,43 @@
+﻿@model OregonHikes3.Models.Hike
+@{
+    Layout = "_FormLayout";
+    ViewData["Title"] = "Add a Hike";
+}
+<body>
+
+    <h1>@ViewData["Title"]</h1>
+    <p>Fill out the form below to add a hike here.</p>
+    <form asp-action="AddHike" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label for="UserName">Your Name:</label>
+            <input class="form-control" for="UserName" name="userName" />
+        </div>
+        <div class="form-group">
+            <label asp-for="TrailName">Trail Name:</label>
+            <input class="form-control" asp-for="TrailName" />
+        </div>
+        <div class="form-group">
+            <label>What Region?</label>
+            <select asp-for="Region">
+                <option value="0">Choose a region</option>
+                <option value="Coast">Oregon Coast and Coast Range</option>
+                <option value="Portland Metro">Portland Metro</option>
+                <option value="Columbia Gorge">Mt. Hood and Columbia River Gorge</option>
+                <option value="Willamette Valley">Willamette Valley and Western Cascades</option>
+                <option value="Central Oregon">Central Oregon</option>
+                <option value="Southern Oregon">Southern Oregon</option>
+                <option value="Eastern Oregon">Eastern Oregon</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Hike Description:</label>
+            <input class="form-control" asp-for="Description" />
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success" type="submit">Submit Hike</button>
+        </div>
+    </form>
+
+
+</body>

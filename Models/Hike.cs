@@ -12,5 +12,8 @@ namespace OregonHikes3.Models
         public string TrailName { get; set; }
         public string Region { get; set; }
         public string Description { get; set; }
+
+        public List<Hike> Hikes { get { return hikes; } }
+
     }
 }

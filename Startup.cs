@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OregonHikes3.Controllers;
 using OregonHikes3.Repositories;
 
 namespace OregonHikes3
@@ -30,6 +31,7 @@ namespace OregonHikes3
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer
             (Configuration["Data:OregonHikes3:ConnectionString"]));
 
+            // Inject our repositories into our controllers
             services.AddTransient<IHikeRepository, HikeRepository>();
         }
 
